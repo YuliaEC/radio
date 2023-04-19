@@ -2,9 +2,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    Radio radio = new Radio();
+
+    @Test
+    public void testConstructorWithoutParm() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(10, radio.getNumberOfRadio());
+    }
+
+    @Test
+    public void testConstructorWithParm() {
+        Radio radio = new Radio(50);
+        Assertions.assertEquals(50, radio.getNumberOfRadio());
+        Assertions.assertEquals(49, radio.getMaxStation());
+    }
+
     @Test
     public void shouldSetCurrentStationMin1() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(-1);
 
@@ -16,7 +30,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation0() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(0);
 
@@ -28,7 +41,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation1() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(1);
 
@@ -40,7 +52,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation8() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(8);
 
@@ -52,7 +63,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation9() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(9);
 
@@ -64,7 +74,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStation10() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(10);
 
@@ -77,7 +86,6 @@ public class RadioTest {
     /////////////////////////////////TestNext//////////////////////////////////////////////////////
     @Test
     public void shouldNextChecking8() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(8);
         radio.next();
@@ -90,7 +98,6 @@ public class RadioTest {
 
     @Test
     public void shouldNextChecking9() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(9);
         radio.next();
@@ -104,7 +111,6 @@ public class RadioTest {
     ////////////////////////////////////TestPrev///////////////////////////////////////////
     @Test
     public void shouldPrevChecking1() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(1);
         radio.prev();
@@ -117,7 +123,6 @@ public class RadioTest {
 
     @Test
     public void shouldPrevChecking0() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(0);
         radio.prev();
@@ -131,7 +136,6 @@ public class RadioTest {
     /////////////////////////////////////////////TestSetVolume///////////////////////////////////////
     @Test
     public void shouldSetVolumeMin1() {
-        Radio radio = new Radio();
 
         radio.setVolume(-1);
 
@@ -143,7 +147,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume0() {
-        Radio radio = new Radio();
 
         radio.setVolume(0);
 
@@ -155,7 +158,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume1() {
-        Radio radio = new Radio();
 
         radio.setVolume(1);
 
@@ -167,7 +169,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume99() {
-        Radio radio = new Radio();
 
         radio.setVolume(99);
 
@@ -179,7 +180,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume100() {
-        Radio radio = new Radio();
 
         radio.setVolume(100);
 
@@ -191,7 +191,6 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume101() {
-        Radio radio = new Radio();
 
         radio.setVolume(101);
 
@@ -204,7 +203,6 @@ public class RadioTest {
     /////////////////////////////////TestIncreaseVolume//////////////////////////////////////////
     @Test
     public void shouldIncreaseVolumeMore99() {
-        Radio radio = new Radio();
 
         radio.setVolume(100);
         radio.increaseVolume();
@@ -217,7 +215,6 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolumeMore101() {
-        Radio radio = new Radio();
 
         radio.setVolume(101);
         radio.increaseVolume();
@@ -231,7 +228,6 @@ public class RadioTest {
     ///////////////////////////TestDecreaseVolume////////////////////////////////////////////
     @Test
     public void shouldDecreaseVolume0() {
-        Radio radio = new Radio();
 
         radio.setVolume(0);
         radio.decreaseVolume();
@@ -244,7 +240,6 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolume1() {
-        Radio radio = new Radio();
 
         radio.setVolume(1);
         radio.decreaseVolume();
